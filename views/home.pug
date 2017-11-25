@@ -13,13 +13,18 @@ block content
         input.form-control(type='password', name='password', id='password', placeholder='Password', required)
     .form-group
       .col-sm-offset-3.col-sm-7
-        button.col-sm-3.btn.btn-primary(type='submit')
+        button.col-sm-3.btn.btn-block.btn-primary(type='submit')
           i.fa.fa-user
           | Login
-        a.btn.btn-link(href='/forgot') Forgot your password?
+        br  
     .form-group
       .col-sm-offset-3.col-sm-7
-        hr
+        p.text-center
+          a(href='/forgot') Forgot your password?
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        p.text-center
+          | Or sign in with
     .form-group
       .col-sm-offset-3.col-sm-7
         a.btn.btn-block.btn-facebook(href='/auth/facebook')
