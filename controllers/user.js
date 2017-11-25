@@ -84,6 +84,19 @@ exports.getIdeas = (req, res) => {
 
 
 /**
+ * GET /ideas
+ * Ideas page.
+ */
+exports.getIdeasMapper = (req, res) => {
+  if (!req.user) {
+    return res.redirect('/');
+  }
+  res.render('account/idea-mapper', {
+    title: 'Idea mapper'
+  });
+};
+
+/**
  * POST /signup
  * Create a new local account.
  */

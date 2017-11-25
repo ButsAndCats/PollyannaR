@@ -127,6 +127,8 @@ app.post('/forgot', userController.postForgot);
 
 app.get('/ideas', userController.getIdeas);
 
+app.get('/ideas/idea-mapper', userController.getIdeasMapper);
+
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);

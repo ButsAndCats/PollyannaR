@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  
+  .page-header
+    h3 Get some inspiration
+    
+  form.form-inline
+    .col-sm-offset-3.col-sm-7
+      .form-group
+        input.form-control(type='text', name='goal', id='goal', placeholder='Type your goal here', autofocus)
+      .form-group
+        button.btn.btn-primary(type='submit')
+          | Add
+  .form-horizontal
+    .form-group
+      .col-sm-offset-3.col-sm-7    
+        button.btn.btn-primary.btn-block
+          | Save
+    .form-group
+      .col-sm-offset-3.col-sm-7  
+        a
+          | Choose images instead
