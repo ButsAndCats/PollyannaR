@@ -5,7 +5,7 @@ block content
     .container.s.center
       h1
         img.logo(src="/images/logo.svg")
-    .container.l.center
+    .container.s.center
       include partials/login-form
   else
     .container.l
@@ -23,6 +23,10 @@ block content
           .column.l12
             a.button(href="/goals/new") Create a new goal
       else
+        .row.no-margin
+          .column.l12
             h3 Create a goal to get started
+
+        .row
             
       

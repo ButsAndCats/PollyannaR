@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema({
     picture: String
   },
 
+  badges: [],
+
   goals: [
     {
       name: String,

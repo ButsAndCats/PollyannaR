@@ -641,6 +641,12 @@ a.button {
   vertical-align: middle;
   margin: 5px; }
 
+.profile-picture-large {
+  border-radius: 100%;
+  width: 64px;
+  vertical-align: middle;
+  margin: 5px; }
+
 /* Navigation =================================================================*/
 .theme-nav-main .nav-link {
   margin-right: 16.66667px; }
