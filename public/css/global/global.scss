@@ -46,7 +46,7 @@ p {
 }
 
 a {
-  color: $colorBrand;
+  color: initial;
   text-decoration: none;
   cursor: pointer;
   @include transition();
