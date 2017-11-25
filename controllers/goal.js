@@ -106,8 +106,6 @@ exports.view = (req, res) => {
 
 };
 
-
-
 /**
  * POST /goals/add
  * Goal adding.
