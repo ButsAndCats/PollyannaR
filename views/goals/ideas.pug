@@ -2,13 +2,14 @@ extends ../layout
 
 block content
   
-  .page-header
+  .container.l
     h3 Get some inspiration
     
-  .form-horizontal
-    .form-group
-      a.btn.btn-group(href='ideas/idea-mapper')
-        | Try out our idea mapper
-    .form-group
-      a.btn.btn-group(href='/')
-        | I know my goal now
+  .container.s
+    .row.center
+      .column.l12
+        a.button.block(href='ideas/idea-mapper')
+          | Try out our idea mapper
+      .column.l12
+        a.button.block(href='/goals/new')
+          | I know my goal now

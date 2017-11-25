@@ -123,7 +123,7 @@ p {
   margin-bottom: 1.4rem; }
 
 a {
-  color: #000000;
+  color: initial;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-out;
