@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .container.l
+    h3.center What's your goal?
+  .container.s.center
+    form(method='POST' action="/goals/add")
+      input(type='hidden', name='_csrf', value=_csrf)
+        
+      label(for='goal') What is your goal?
+      input(type='text', name='goal', id='goal', placeholder='Type your goal here', autofocus, required)
+      button(type='submit') Continue
+      
+      hr
+        
+      a.button(href='/goals/ideas') Dont know?

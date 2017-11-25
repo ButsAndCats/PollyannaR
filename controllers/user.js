@@ -41,7 +41,7 @@ exports.postLogin = (req, res, next) => {
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
-      req.flash('success', { msg: 'Success! You are logged in.' });
+      // req.flash('success', { msg: 'Success! You are logged in.' });
       res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
@@ -66,33 +66,6 @@ exports.getSignup = (req, res) => {
   }
   res.render('account/signup', {
     title: 'Create Account'
-  });
-};
-
-/**
- * GET /ideas
- * Ideas page.
- */
-exports.getIdeas = (req, res) => {
-  if (!req.user) {
-    return res.redirect('/');
-  }
-  res.render('account/ideas', {
-    title: 'Ideas'
-  });
-};
-
-
-/**
- * GET /ideas
- * Ideas page.
- */
-exports.getIdeasMapper = (req, res) => {
-  if (!req.user) {
-    return res.redirect('/');
-  }
-  res.render('account/idea-mapper', {
-    title: 'Idea mapper'
   });
 };
 
@@ -134,31 +107,6 @@ exports.postSignup = (req, res, next) => {
       });
     });
   });
-};
-
-
-/**
- * POST /goals
- * Goal adding.
- */
-exports.addGoal = (req, res, next) => {
-  console.log(req.body.goal)
-  if (req.body.goal != '') {
-    User.findById(req.user.id, (err, user) => {
-      console.log(user.goals)
-      var tempGoals = {};
-      tempGoals.name = req.body.goal;
-      user.goals.push(tempGoals);
-      user.save((err) => {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', { msg: 'Added '+ req.body.goal + ' goal.' });
-        res.redirect('/');
-      });
-      console.log(user.goals);
-    });
-  }
 };
 
 /**

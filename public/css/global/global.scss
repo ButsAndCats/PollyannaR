@@ -1,0 +1,95 @@
+/* Global ====================================================================*/
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: $colorText;
+  background-color: $colorBackground;
+  font: 16px/21px 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding-top: $gutter;
+  padding-bottom: $gutter
+}
+
+img {
+  max-width: 100%;
+}
+
+// Typography
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: $fontBold;
+  line-height: $lineHeight;
+  display: block;
+  margin-bottom: $gutter/3;
+}
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.25rem; }
+h5, .h5 { font-size: 1rem; }
+h6, .h6 { font-size: 0.875rem; }
+
+p {
+  font-size: 1.125rem;
+  font-weight: $fontRegular;
+  line-height: $lineHeight;
+  margin-bottom: 1.4rem;
+}
+
+a {
+  color: $colorBrand;
+  text-decoration: none;
+  cursor: pointer;
+  @include transition();
+  &:hover, &:focus {
+    color: darken($colorBrand, 5%);
+  }
+}
+
+hr {
+  border: 0;
+  border-top: $borderWeight $borderStyle $colorAlternate;
+  margin: $gutter/1.5 0;
+}
+
+strong, b {
+  font-weight: $fontBold;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+i {
+  font-style: italic;
+}
+
+.rte {
+  // TBA
+  ul, ol {
+    list-style: initial;
+    list-style-position: inside;
+    margin-bottom: $gutter/2;
+    li {
+      list-style: inherit;
+      list-style-position: inherit;
+      margin-bottom: $gutter/2;
+    }
+  }
+  ol {
+    list-style-type: decimal;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: $gutter;
+}

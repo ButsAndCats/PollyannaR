@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container.l.center
+    h3.center Select 5 reasons why you want to achieve this goal
+  .container.l
+    .row
+      each reason in reasons
+        .column.l3.m4.s6
+          button.reason(data-reason=(reason.toLowerCase()))=reason
+    .row
+      .column
+        button.center(id='addReasons', disabled) Continue
+        
+        hr
+          
+        a(href='/') Exit

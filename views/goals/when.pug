@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  .container.l.center
+    h3.center When would you like to complete this goal?
+  .container.s.center
+    .row
+      .column.l12.center
+        select(id='timeValue')
+          - var n = 1;
+          while n < 32
+            option(value=(n))= n++
+        select(id='timeMeasurement').margin-left-4
+          option(value="days") Days
+          option(value="months") Months
+          option(value="years") Years
+    .row
+      .column.l12.center    
+        button(id="addDate") Save
+          
+        

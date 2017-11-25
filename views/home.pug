@@ -2,54 +2,27 @@ extends layout
 
 block content
   if !user
-    form.form-horizontal(method='POST' action='/login')
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        label.col-sm-3.control-label(for='email') Email
-        .col-sm-7
-          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-      .form-group
-        label.col-sm-3.control-label(for='password') Password
-        .col-sm-7
-          input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-      .form-group
-        .col-sm-offset-3.col-sm-7
-          button.col-sm-3.btn.btn-block.btn-primary(type='submit')
-            | Login
-          br
-      .form-group
-        .col-sm-offset-3.col-sm-7
-          p.text-center
-            | Or
-      .form-group
-        .col-sm-offset-3.col-sm-7
-          a.btn.btn-block.btn-facebook(href='/auth/facebook')
-            i.fa.fa-facebook
-          //- a.btn.btn-block.btn-twitter(href='/auth/twitter')
-          //-   i.fa.fa-twitter
-          a.btn.btn-block.btn-google(href='/auth/google')
-            i.fa.fa-google-plus
-          //- a.btn.btn-block.btn-linkedin(href='/auth/linkedin')
-          //-   i.fa.fa-linkedin
-          //- a.btn.btn-block.btn-instagram(href='/auth/instagram')
-          //-   i.fa.fa-instagram
-      .form-group
-        .col-sm-offset-3.col-sm-7
-          p.text-center
-            a(href='/forgot') Forgot your password?
+    .container.s.center
+      h1
+        img.logo(src="/images/logo.svg")
+    .container.l.center
+      include partials/login-form
   else
-    form.form-horizontal(method='POST' action="/goals/add")
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        label.col-sm-3.control-label(for='goal') What is your goal?
-        .col-sm-7
-          input.form-control(type='text', name='goal', id='goal', placeholder='Type your goal here', autofocus, required)
-      .form-group
-        .col-sm-7
-          button.btn.btn-primary(type='submit')
-            | Add
-      .form-group
-        .col-sm-offset-3.col-sm-7
-          p.text-center
-            a.btn.btn-primary(href='/ideas')
-              | Dont know?
+    .container.l
+      .row.no-margin
+        .column.l12
+          h1 Dashboard
+      
+      if user.goals.length > 0
+        .row.no-margin
+          .column.l12
+            h3 Your goals
+            each goal, index in user.goals
+              a.button.block(href=("/goals/view/"+index))=goal.name
+        .row.center
+          .column.l12
+            a.button(href="/goals/new") Create a new goal
+      else
+            h3 Create a goal to get started
+            
+      

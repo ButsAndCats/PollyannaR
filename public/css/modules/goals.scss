@@ -1,0 +1,13 @@
+/* Goals ====================================================================*/
+
+.reason {
+  width: 100%;
+  line-height: 0%;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-bottom: $gutter;
+  &.active {
+    background-color: $colorText;
+    color: $colorForeground;
+  }
+}

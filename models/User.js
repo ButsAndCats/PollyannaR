@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
   goals: [
     {
       name: String,
+      why: Array,
       milestones: [
         {
           type: String

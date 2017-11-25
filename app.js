@@ -25,13 +25,14 @@ const upload = multer({ dest: path.join(__dirname, 'uploads') });
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
-dotenv.load({ path: '.env.example' });
+dotenv.load({ path: '.env' });
 
 /**
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
+const goalController = require('./controllers/goal');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
@@ -124,13 +125,6 @@ app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
-
-app.get('/ideas', userController.getIdeas);
-
-app.get('/ideas/idea-mapper', userController.getIdeasMapper);
-
-app.post('/goals/add', userController.addGoal);
-
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
@@ -142,6 +136,21 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+/**
+ * Goal app routes.
+ */
+
+app.get('/goals/ideas', goalController.getIdeas);
+app.get('/goals/ideas-mapper', goalController.getIdeasMapper);
+app.get('/goals/new', goalController.newGoal);
+app.get('/goals/why', goalController.why);
+app.get('/goals/when', goalController.when);
+app.get('/goals/complete', goalController.complete);
+app.get('/goals/view/:id', goalController.view);
+
+app.post('/goals/add', goalController.addGoal);
+app.post('/goals/edit', goalController.editGoal);
 
 /**
  * API examples routes.

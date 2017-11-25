@@ -1,0 +1,18 @@
+/* Header ====================================================================*/
+
+.theme-header {
+  padding: $gutter/2 0;
+  background-color: $colorForeground;
+  .logo {
+    img {
+      max-width: $logoMaxWidth;
+    }
+  }
+}
+
+.profile-picture {
+  border-radius: 100%;
+  width: 32px;
+  vertical-align: middle;
+  margin: $gutter/10;
+}
