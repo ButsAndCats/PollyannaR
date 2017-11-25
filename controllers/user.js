@@ -136,6 +136,31 @@ exports.postSignup = (req, res, next) => {
   });
 };
 
+
+/**
+ * POST /goals
+ * Goal adding.
+ */
+exports.addGoal = (req, res, next) => {
+  console.log(req.body.goal)
+  if (req.body.goal != '') {
+    User.findById(req.user.id, (err, user) => {
+      console.log(user.goals)
+      var tempGoals = {};
+      tempGoals.name = req.body.goal;
+      user.goals.push(tempGoals);
+      user.save((err) => {
+        if (err) {
+          return next(err);
+        }
+        req.flash('success', { msg: 'Added '+ req.body.goal + ' goal.' });
+        res.redirect('/');
+      });
+      console.log(user.goals);
+    });
+  }
+};
+
 /**
  * GET /account
  * Profile page.

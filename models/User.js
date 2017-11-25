@@ -23,7 +23,20 @@ const userSchema = new mongoose.Schema({
     location: String,
     website: String,
     picture: String
-  }
+  },
+
+  goals: [
+    {
+      name: String,
+      milestones: [
+        {
+          type: String
+        }
+      ],
+      endDate: String
+    }
+  ]
+
 }, { timestamps: true });
 
 /**

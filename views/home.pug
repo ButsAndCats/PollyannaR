@@ -25,25 +25,29 @@ block content
         .col-sm-offset-3.col-sm-7
           a.btn.btn-block.btn-facebook(href='/auth/facebook')
             i.fa.fa-facebook
-          a.btn.btn-block.btn-twitter(href='/auth/twitter')
-            i.fa.fa-twitter
+          //- a.btn.btn-block.btn-twitter(href='/auth/twitter')
+          //-   i.fa.fa-twitter
           a.btn.btn-block.btn-google(href='/auth/google')
             i.fa.fa-google-plus
-          a.btn.btn-block.btn-linkedin(href='/auth/linkedin')
-            i.fa.fa-linkedin
-          a.btn.btn-block.btn-instagram(href='/auth/instagram')
-            i.fa.fa-instagram
+          //- a.btn.btn-block.btn-linkedin(href='/auth/linkedin')
+          //-   i.fa.fa-linkedin
+          //- a.btn.btn-block.btn-instagram(href='/auth/instagram')
+          //-   i.fa.fa-instagram
       .form-group
         .col-sm-offset-3.col-sm-7
           p.text-center
             a(href='/forgot') Forgot your password?
   else
-    form.form-horizontal(method='POST' action="/goal")
+    form.form-horizontal(method='POST' action="/goals/add")
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
         label.col-sm-3.control-label(for='goal') What is your goal?
         .col-sm-7
           input.form-control(type='text', name='goal', id='goal', placeholder='Type your goal here', autofocus, required)
+      .form-group
+        .col-sm-7
+          button.btn.btn-primary(type='submit')
+            | Add
       .form-group
         .col-sm-offset-3.col-sm-7
           p.text-center
