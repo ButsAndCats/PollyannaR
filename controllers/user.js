@@ -70,6 +70,20 @@ exports.getSignup = (req, res) => {
 };
 
 /**
+ * GET /ideas
+ * Ideas page.
+ */
+exports.getIdeas = (req, res) => {
+  if (!req.user) {
+    return res.redirect('/');
+  }
+  res.render('account/ideas', {
+    title: 'Ideas'
+  });
+};
+
+
+/**
  * POST /signup
  * Create a new local account.
  */

@@ -1,39 +1,51 @@
 extends layout
 
 block content
-  form.form-horizontal(method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-    .form-group
-      label.col-sm-3.control-label(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        button.col-sm-3.btn.btn-block.btn-primary(type='submit')
-          i.fa.fa-user
-          | Login
-        br
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        p.text-center
-          | Or sign in with
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        a.btn.btn-block.btn-facebook(href='/auth/facebook')
-          i.fa.fa-facebook
-        a.btn.btn-block.btn-twitter(href='/auth/twitter')
-          i.fa.fa-twitter
-        a.btn.btn-block.btn-google(href='/auth/google')
-          i.fa.fa-google-plus
-        a.btn.btn-block.btn-linkedin(href='/auth/linkedin')
-          i.fa.fa-linkedin
-        a.btn.btn-block.btn-instagram(href='/auth/instagram')
-          i.fa.fa-instagram
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        p.text-center
-          a(href='/forgot') Forgot your password?
+  if !user
+    form.form-horizontal(method='POST' action='/login')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label.col-sm-3.control-label(for='email') Email
+        .col-sm-7
+          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+      .form-group
+        label.col-sm-3.control-label(for='password') Password
+        .col-sm-7
+          input.form-control(type='password', name='password', id='password', placeholder='Password', required)
+      .form-group
+        .col-sm-offset-3.col-sm-7
+          button.col-sm-3.btn.btn-block.btn-primary(type='submit')
+            | Login
+          br
+      .form-group
+        .col-sm-offset-3.col-sm-7
+          p.text-center
+            | Or
+      .form-group
+        .col-sm-offset-3.col-sm-7
+          a.btn.btn-block.btn-facebook(href='/auth/facebook')
+            i.fa.fa-facebook
+          a.btn.btn-block.btn-twitter(href='/auth/twitter')
+            i.fa.fa-twitter
+          a.btn.btn-block.btn-google(href='/auth/google')
+            i.fa.fa-google-plus
+          a.btn.btn-block.btn-linkedin(href='/auth/linkedin')
+            i.fa.fa-linkedin
+          a.btn.btn-block.btn-instagram(href='/auth/instagram')
+            i.fa.fa-instagram
+      .form-group
+        .col-sm-offset-3.col-sm-7
+          p.text-center
+            a(href='/forgot') Forgot your password?
+  else
+    form.form-horizontal(method='POST' action="/goal")
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label.col-sm-3.control-label(for='goal') What is your goal?
+        .col-sm-7
+          input.form-control(type='text', name='goal', id='goal', placeholder='Type your goal here', autofocus, required)
+      .form-group
+        .col-sm-offset-3.col-sm-7
+          p.text-center
+            a.btn.btn-primary(href='/ideas')
+              | Dont know?
