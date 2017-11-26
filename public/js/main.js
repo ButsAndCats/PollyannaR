@@ -19,7 +19,7 @@ $(document).ready(function() {
   var selectedReasons = [];
   var goal = concrete.getUrlParameterByName('goal');
 
-  $(document).on('click', '.reason', function(){
+  $(document).on('click', '.reason', function() {
     if(selectedReasons.length < 5) {
       if($(this).hasClass('active')) {
         $(this).removeClass('active');

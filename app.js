@@ -148,6 +148,7 @@ app.get('/goals/why', goalController.why);
 app.get('/goals/when', goalController.when);
 app.get('/goals/complete', goalController.complete);
 app.get('/goals/view/:id', goalController.view);
+app.get('/goals/check-in', goalController.checkIn);
 
 app.post('/goals/add', goalController.addGoal);
 app.post('/goals/edit', goalController.editGoal);

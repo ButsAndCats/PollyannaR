@@ -1,15 +1,15 @@
 if user
   header.theme-header(role="banner")
     .container
-      .row.l-table.m-table.no-margin
-        .column.l8.m8.s12.l-left.m-left.v-middle
+      .row.table.no-margin
+        .column.l8.m8.s4.l-left.m-left.v-middle
           .no-margin.logo(itemprop="publisher" itemscope itemtype="http://schema.org/Organization")
             meta(itemprop="name" content="Soul Goal")
             a.logo-image(href="/" itemprop="url" title="Soul Goal")
               span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
                 img(src="/images/logo.svg" alt="Soul Goal"  itemprop="image")
           
-        .column.l4.m4.s12.l-right.m-right.v-middle
+        .column.l4.m4.s8.l-right.m-right.v-middle
           nav.theme-nav-main(role="navigation")
             ul.inline
               li.dropdown
@@ -24,23 +24,3 @@ if user
                       a(href='/account') My Account
                     li
                       a(href='/logout') Logout
-
-                
-                      
-        
-        
-      
-      //-       li.dropdown(class=(title === 'Account Management') ? 'active' : undefined)
-      //-         a.dropdown-toggle(href='#', data-toggle='dropdown')
-      //-           if user.profile.picture
-      //-             img(src=user.profile.picture)
-      //-           else
-      //-             img(src=user.gravatar(60))
-      //-           span= user.profile.name || user.email || user.id
-      //-           i.caret
-      //-         ul.dropdown-menu
-      //-           li
-      //-             a(href='/account') My Account
-      //-           li.divider
-      //-           li
-      //-             a(href='/logout') Logout

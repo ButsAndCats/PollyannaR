@@ -4,7 +4,8 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
-const reasons = ["Love", "Pioneer", "Money", "Truth", "Curiosity", "Pleasure", "Compassion", "Develop", "Support", "Magical", "Tradition", "Courage", "Sacred", "Gratitude", "Passion", "Health", "Education", "Religion", "Personal", "Connection", "Freedom", "Strength", "Stamina"]
+const reasons = ["Love", "Pioneer", "Money", "Truth", "Curiosity", "Pleasure", "Compassion", "Develop", "Support", "Magical", "Tradition", "Courage", "Sacred", "Gratitude", "Passion", "Health", "Education", "Religion", "Personal", "Connection", "Freedom", "Strength", "Stamina"];
+
 /**
  * GET goals/ideas
  * Ideas page.
@@ -32,7 +33,7 @@ exports.getIdeasMapper = (req, res) => {
 };
 
 /**
- * GET /goal/new
+ * GET /goals/new
  * New goal page
  */
 exports.newGoal = (req, res) => {
@@ -45,7 +46,7 @@ exports.newGoal = (req, res) => {
 };
 
 /**
- * GET /goal/why
+ * GET /goals/why
  * List reasons why this is your goal
  */
 exports.why = (req, res) => {
@@ -59,7 +60,7 @@ exports.why = (req, res) => {
 };
 
 /**
- * GET /goal/when
+ * GET /goals/when
  * List reasons why this is your goal
  */
 exports.when = (req, res) => {
@@ -73,7 +74,7 @@ exports.when = (req, res) => {
 };
 
 /**
- * GET /goal/complete
+ * GET /goals/complete
  * Completed
  */
 exports.complete = (req, res) => {
@@ -83,6 +84,19 @@ exports.complete = (req, res) => {
   res.render('goals/complete', {
     title: 'Congratulations',
     goal: req.query.goal
+  });
+};
+
+/**
+ * GET /goals/check-in
+ * Completed
+ */
+exports.checkIn = (req, res) => {
+  if (!req.user) {
+    return res.redirect('/');
+  }
+  res.render('check-in/view', {
+    title: 'Daily check in'
   });
 };
 
