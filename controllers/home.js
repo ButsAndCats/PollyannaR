@@ -7,3 +7,9 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+exports.error = (req, res) => {
+  res.render('error', {
+    url: req.originalUrl
+  })
+}
