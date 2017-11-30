@@ -9,11 +9,11 @@ block content
         .column.l12.center
           span milestone.name
       .column.l12.center
-        input(type="text", placeholder=(goal.milestones.length == 0 ? 'Add a milestone' : 'Add another milestone'))
-        button.margin-left-4 Add
+        input(type="text", placeholder=(goal.milestones.length == 0 ? 'Add a milestone' : 'Add another milestone'), id="milestoneInput")
+        button.milestone.margin-left-4 Add
         
     .row
       .column.l12.center    
-        button(id="addDate") Save
+        button(id="addMilestones") Save
           
         

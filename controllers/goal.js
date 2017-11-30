@@ -170,5 +170,8 @@ exports.editGoal = (req, res, next) => {
   } else {
     res.redirect('/');
   }
-
 };
+
+exports.report = (req, res, next) => {
+  
+}

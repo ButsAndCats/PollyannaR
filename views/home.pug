@@ -21,7 +21,10 @@ block content
               a.button.block(href=("/goals/view/"+index))=goal.name
         .row.center
           .column.l12
-            a.button(href="/goals/new") Create a new goal
+            a.button(href="/goals/new", style='margin-right: 10px') 
+              | Create a new goal
+            a.button(href="/report")
+              | Export
       else
         .row.no-margin
           .column.l12
