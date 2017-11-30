@@ -36,6 +36,10 @@ const goalController = require('./controllers/goal');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
+const primaryRoutes = require('./routes/primary');
+const goalRoutes = require('./routes/goal')
+const authRoutes = require('./routes/auth')
+const apiRoutes = require('./routes/api');
 /**
  * API keys and Passport configuration.
  */
@@ -117,8 +121,9 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 /**
- * Primary app routes.
+ * Routes.
  */
+<<<<<<< HEAD
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -234,6 +239,12 @@ app.get('/auth/pinterest/callback', passport.authorize('pinterest', { failureRed
   res.redirect('/api/pinterest');
 });
 
+=======
+app.use('/goals', goalRoutes)
+app.use('/auth', authRoutes)
+app.use('/api', apiRoutes)
+app.use(primaryRoutes);
+>>>>>>> b6e0ab9871c4e86e48aeff901bad8856b51ffea6
 /**
  * Error Handler.
  */
