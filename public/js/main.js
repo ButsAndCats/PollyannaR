@@ -91,4 +91,15 @@ $(document).ready(() => {
     });
   });
 
+  $(document).on('click', '#report', () => {
+    $.ajax({
+      url: 'goals/report',
+      type: 'POST',
+      headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+      success(data){
+        //TODO: add download func
+      }
+    })
+  })
+
 });

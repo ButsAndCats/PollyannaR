@@ -17,8 +17,8 @@ router.get('/why', goalController.why);
 router.get('/when', goalController.when);
 router.get('/complete', goalController.complete);
 router.get('/view/:id', goalController.view);
-router.get('/report', goalController.report);
 
+router.post('/report', goalController.report);
 router.post('/add', goalController.addGoal);
 router.post('/edit', goalController.editGoal);
 

@@ -173,5 +173,10 @@ exports.editGoal = (req, res, next) => {
 };
 
 exports.report = (req, res, next) => {
-  
+  console.log('Generating report...');
+  if(!req.user){
+      return res.redirect('/');
+  }
+
+
 }
