@@ -172,17 +172,23 @@ exports.editGoal = (req, res, next) => {
   }
 };
 
+/**
+ * POST /goals/report
+ * Return Goal data
+**/
 exports.report = (req, res, next) => {
   console.log('Generating report...');
   if(!req.user){
     return res.redirect('/');
+  
+  } else {
+    var data = [];
+    for (var i = 0; i < req.user.goals.length; i++){
+      data.push(req.user.goals[i].name);
+    }
   }
-  console.log(req.user.goals + ' ' + req.user.goals.length);
-  let data = [];
-  for (var i = 0; i < req.user.goals.length; i++){
-    console.log(req.user.goals[i].name + i);
-    data.push(req.user.goals[i].name);
-  }
-  console.log(data);
-  return data;
+  console.log('Data = ' + data);
+
+  var blobbyMcBlobFace = new Blob(data, {type: 'text/csv'});
+  return blobbyMcBlobFace;
 }
