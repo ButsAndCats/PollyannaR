@@ -98,6 +98,7 @@ $(document).ready(() => {
       headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
       success(data){
         //TODO: add download func
+        console.log(data);
       }
     })
   })
