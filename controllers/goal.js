@@ -189,6 +189,5 @@ exports.report = (req, res, next) => {
   }
   console.log('Data = ' + data);
 
-  var blobbyMcBlobFace = new Blob(data, {type: 'text/csv'});
-  return blobbyMcBlobFace;
+  return data;
 }
